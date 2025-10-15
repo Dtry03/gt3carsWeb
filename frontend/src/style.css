@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .service-card {
+    position: relative;
+    overflow: hidden; /* Importante para el efecto de borde */
+  }
+
+  /* Creamos un pseudo-elemento que será nuestro borde iluminado */
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px; /* Mismo radio que la tarjeta */
+    
+    /* El degradado del borde */
+    background: radial-gradient(
+      ellipse at top left,
+      var(--tw-colors-primary),
+      transparent 50%
+    );
+    
+    opacity: 0; /* Oculto por defecto */
+    transition: opacity 0.4s ease-out;
+  }
+
+  /* Al hacer hover, el borde se hace visible */
+  .service-card:hover::before {
+    opacity: 0.6;
+  }
+}
