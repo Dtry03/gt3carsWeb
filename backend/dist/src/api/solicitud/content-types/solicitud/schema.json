@@ -1,0 +1,39 @@
+{
+    "kind": "collectionType",
+    "collectionName": "solicituds",
+    "info": {
+        "singularName": "solicitud",
+        "pluralName": "solicituds",
+        "displayName": "solicitud"
+    },
+    "options": {
+        "draftAndPublish": true
+    },
+    "pluginOptions": {},
+    "attributes": {
+        "nombre": {
+            "type": "string"
+        },
+        "correo": {
+            "type": "email"
+        },
+        "telefono": {
+            "type": "string"
+        },
+        "mensaje": {
+            "type": "richtext"
+        },
+        "estado": {
+            "type": "enumeration",
+            "default": "Nueva",
+            "enum": [
+                "Nueva",
+                "En proceso",
+                "Resuelta"
+            ]
+        },
+        "fecha_creacion": {
+            "type": "date"
+        }
+    }
+}
