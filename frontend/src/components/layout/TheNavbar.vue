@@ -1,16 +1,9 @@
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
+import { ref} from 'vue'
 import { RouterLink } from 'vue-router'
 
 const isMenuOpen = ref(false)
 
-const authStore = reactive({
-  isLoggedIn: false,
-})
-
-function logout() {
-  authStore.isLoggedIn = false
-}
 </script>
 
 <template>
