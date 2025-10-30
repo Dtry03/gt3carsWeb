@@ -7,7 +7,18 @@ exports.default = [
     'strapi::cors',
     'strapi::poweredBy',
     'strapi::query',
-    'strapi::body',
+    {
+        name: 'strapi::body',
+        config: {
+            formLimit: '256mb', // Límite para formularios
+            jsonLimit: '256mb', // Límite para JSON
+            textLimit: '256mb', // Límite para texto
+            formidable: {
+                // Aquí defines el límite MÁXIMO de subida de archivos
+                maxFileSize: 200 * 1024 * 1024, // = 200MB
+            },
+        },
+    },
     'strapi::session',
     'strapi::favicon',
     'strapi::public',
